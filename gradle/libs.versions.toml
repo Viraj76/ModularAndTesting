@@ -5,6 +5,9 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
+ktorClientAndroid = "2.3.11"
+ktorClientContentNegotiation = "2.3.11"
+ktorClientCore = "2.3.11"
 ktorSerializationKotlinxJson = "2.3.11"
 lifecycleRuntimeKtx = "2.8.2"
 activityCompose = "1.9.0"
@@ -13,6 +16,7 @@ jetbrainsKotlinJvm = "1.9.0"
 appcompat = "1.7.0"
 material = "1.6.8"
 material3Android = "1.2.1"
+firebaseCrashlyticsBuildtools = "3.0.0"
 
 
 [libraries]
@@ -33,11 +37,15 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorSerializationKotlinxJson" }
 ktor-server-core = { module = "io.ktor:ktor-server-core" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-material = { module = "androidx.compose.material:material", version.ref = "material" }
+firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

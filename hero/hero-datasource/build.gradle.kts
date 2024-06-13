@@ -17,6 +17,10 @@ dependencies {
     implementation(project(":hero:hero-domain"))
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
-    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.serialization.kotlinx.json) // impe one
+    implementation(libs.ktor.client.core) // imp one
+    implementation(libs.ktor.client.android)
+    implementation(libs.firebase.crashlytics.buildtools) // imp one
+    implementation(libs.ktor.client.content.negotiation)
 
 }
