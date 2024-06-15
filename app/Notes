@@ -1,0 +1,2 @@
+Sqldelight , generates a lot of code compare to room db. We don't need to create the database and entity.
+it will get generated automatically
