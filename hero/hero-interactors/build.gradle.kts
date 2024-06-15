@@ -13,7 +13,8 @@ dependencies{
     implementation(project(":hero:hero-datasource"))
     implementation(project(":hero:hero-domain"))
 
-    implementation(libs.kotlinx.coroutines.flow)
+    // no need of below
+//    implementation(libs.kotlinx.coroutines.flow)
     implementation(libs.kotlinx.coroutines.core)
 
 }
