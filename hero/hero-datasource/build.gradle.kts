@@ -25,6 +25,8 @@ dependencies {
     implementation(libs.ktor.client.content.negotiation)
 
     implementation ("app.cash.sqldelight:sqlite-driver:2.0.1")
+    implementation(libs.common)
+    implementation(libs.generativeai)
 
 }
 
