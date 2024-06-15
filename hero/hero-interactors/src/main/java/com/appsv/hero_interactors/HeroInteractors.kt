@@ -1,6 +1,9 @@
 package com.appsv.hero_interactors
 
+import app.cash.sqldelight.db.QueryResult
 import app.cash.sqldelight.db.SqlDriver
+import app.cash.sqldelight.db.SqlSchema
+import com.appsv.hero_datasource.HeroDatabase
 import com.appsv.hero_datasource.cache.HeroCache
 import com.appsv.hero_datasource.network.HeroService
 
@@ -23,5 +26,8 @@ data class HeroInteractors(
                 ),
             )
         }
+        val schema: SqlSchema<QueryResult.Value<Unit>> = HeroCache.schema
+
+        val dbName: String = HeroCache.dbName
     }
 }

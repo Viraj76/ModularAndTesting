@@ -4,7 +4,7 @@ plugins {
     id("io.ktor.plugin") version "2.3.11"
 
     kotlin("plugin.serialization") version "2.0.0"
-    id("app.cash.sqldelight") version "2.0.1"
+    id("app.cash.sqldelight") version "2.0.2"
 }
 
 
@@ -24,9 +24,7 @@ dependencies {
     implementation(libs.firebase.crashlytics.buildtools) // imp one
     implementation(libs.ktor.client.content.negotiation)
 
-    implementation ("app.cash.sqldelight:sqlite-driver:2.0.1")
-    implementation(libs.common)
-    implementation(libs.generativeai)
+    implementation ("app.cash.sqldelight:sqlite-driver:2.0.2"  )
 
 }
 
@@ -34,6 +32,7 @@ sqldelight {
     databases {
         create("HeroDatabase") {
             packageName.set("com.appsv.hero_datasource")
+//            generateAsync.set(true)   if it is true then its generates SqlSchema<QueryResult.AsyncValue<Unit>>  ,,, and ANdroidSqldelightDriver's schema type is accecepts QueryResult.Value<Unit>
         }
     }
 }

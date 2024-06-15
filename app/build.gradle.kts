@@ -67,7 +67,7 @@ dependencies {
 
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3.android)
-
+    implementation("app.cash.sqldelight:android-driver:2.0.2")
 
 
     testImplementation(libs.junit)
