@@ -22,6 +22,8 @@ material3Android = "1.2.1"
 firebaseCrashlyticsBuildtools = "3.0.0"
 common = "0.7.1"
 generativeai = "0.8.0"
+volley = "1.2.1"
+runtimeAndroid = "1.6.8"
 
 
 [libraries]
@@ -56,6 +58,8 @@ androidx-material = { module = "androidx.compose.material:material", version.ref
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 common = { group = "com.google.ai.client.generativeai", name = "common", version.ref = "common" }
 generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "generativeai" }
+volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

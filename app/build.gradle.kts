@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":hero:hero-interactors"))
     implementation(project(":hero:hero-domain"))
+    implementation(project(":hero:heroList"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

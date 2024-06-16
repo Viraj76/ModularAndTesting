@@ -23,6 +23,8 @@ import com.appsv.core.domain.UIComponent
 import com.appsv.core.utils.Logger
 import com.appsv.hero_domain.Hero
 import com.appsv.hero_interactors.HeroInteractors
+import com.appsv.herolist.ui.HeroList
+import com.appsv.herolist.ui.HeroListState
 import com.appsv.multimoduleandtesting.ui.theme.MultiModuleAndTestingTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -30,7 +32,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 class MainActivity : ComponentActivity() {
-    private val heros: MutableState<List<Hero>> = mutableStateOf(listOf())
+    private val state: MutableState<HeroListState> = mutableStateOf(HeroListState())
     private val progressBarState: MutableState<ProgressBarState> = mutableStateOf(ProgressBarState.Idle)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +58,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
                 is DataState.Data -> {
-                    heros.value = dataState.data?: listOf()
+                    state.value = state.value.copy(heros = dataState.data?: listOf())
                 }
                 is DataState.Loading -> {
                     progressBarState.value = dataState.progressBarState
@@ -69,14 +71,7 @@ class MainActivity : ComponentActivity() {
                 Box(
                     modifier = Modifier.fillMaxSize()
                 ){
-                    LazyColumn {
-                        items(heros.value) { hero ->
-                            Text(hero.localizedName)
-                        }
-                    }
-                    if (progressBarState.value is ProgressBarState.Loading) {
-                        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-                    }
+                   HeroList(state = state.value)
                 }
 
             }
