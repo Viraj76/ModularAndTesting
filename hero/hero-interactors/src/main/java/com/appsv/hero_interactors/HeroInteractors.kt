@@ -10,6 +10,7 @@ import com.appsv.hero_datasource.network.HeroService
 
 data class HeroInteractors(
     val getHeros: GetHeros,
+    val getHeroFromCache: GetHeroFromCache
     // TODO(Add other hero interactors)
 ) {
 
@@ -24,6 +25,7 @@ data class HeroInteractors(
                     service = service,
                     cache = cache
                 ),
+                getHeroFromCache = GetHeroFromCache(cache)
             )
         }
         val schema: SqlSchema<QueryResult.Value<Unit>> = HeroCache.schema
