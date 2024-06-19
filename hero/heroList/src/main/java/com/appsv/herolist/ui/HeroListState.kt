@@ -1,7 +1,10 @@
 package com.appsv.herolist.ui
 
+import com.appsv.core.domain.FilterOrder
 import com.appsv.core.domain.ProgressBarState
 import com.appsv.hero_domain.Hero
+import com.appsv.hero_domain.HeroAttribute
+import com.appsv.hero_domain.HeroFilter
 
 
 data class HeroListState(
@@ -9,8 +12,8 @@ data class HeroListState(
     val heros: List<Hero> = listOf(),
     val filteredHeros: List<Hero> = listOf(),
 //    val filterDialogState: UIComponentState = UIComponentState.Hide, // show/hide the filter dialog
-//    val heroFilter: HeroFilter = HeroFilter.Hero(FilterOrder.Descending),
-//    val primaryAttrFilter: HeroAttribute = HeroAttribute.Unknown,
+    val heroFilter: HeroFilter = HeroFilter.Hero(FilterOrder.Descending),
+    val primaryAttrFilter: HeroAttribute = HeroAttribute.Unknown,
     val heroName: String = "",
 //    val errorQueue: Queue<UIComponent> = Queue(mutableListOf())
 )
