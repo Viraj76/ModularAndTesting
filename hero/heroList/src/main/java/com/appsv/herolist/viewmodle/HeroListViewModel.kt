@@ -9,6 +9,7 @@ import com.appsv.core.domain.UIComponent
 import com.appsv.core.utils.Logger
 import com.appsv.hero_interactors.GetHeros
 import com.appsv.herolist.ui.HeroListState
+import com.appsv.herolist.ui.test.HeroListEvents
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -24,7 +25,14 @@ class HeroListViewModel @Inject constructor(
      val state: MutableState<HeroListState> = mutableStateOf(HeroListState())
 
     init {
-        getHeroes()
+        onEvent(event = HeroListEvents.GetHeroes)
+    }
+    private fun onEvent(event : HeroListEvents){
+        when(event){
+            is HeroListEvents.GetHeroes ->{
+                getHeroes()
+            }
+        }
     }
     private fun getHeroes(){
         getHeros.execute().onEach { dataState ->
