@@ -54,6 +54,13 @@ dependencies {
     implementation(project(":hero:hero-domain"))
     implementation(project(":hero:hero-interactors"))
 
+    implementation(libs.androidx.appcompat)
+    implementation(libs.volley)
+    implementation(libs.androidx.runtime.android)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,6 +68,8 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+
     implementation("androidx.compose.foundation:foundation:1.6.8")
     implementation(libs.androidx.material3.android)
     implementation("io.coil-kt:coil-compose:2.6.0")
@@ -70,13 +79,11 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-    implementation(libs.androidx.appcompat)
-    implementation(libs.volley)
-    implementation(libs.androidx.runtime.android)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
+    // sqldelight
     implementation("app.cash.sqldelight:android-driver:2.0.2")
+
+
+
+
 
 }

@@ -14,8 +14,9 @@ import com.appsv.herolist.components.HeroListItem
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun HeroList(
-    state : HeroListState
+fun HeroListScreen(
+    state : HeroListState,
+    navigateToHeroDetailScreen : (Int) ->  Unit
 ){
 
     Box(
@@ -23,7 +24,9 @@ fun HeroList(
     ){
         LazyColumn {
             items(state.heros) { hero ->
-                HeroListItem(hero = hero, onSelectHero = {})
+                HeroListItem(hero = hero, onSelectHero = {heroId ->
+                    navigateToHeroDetailScreen(heroId)
+                })
             }
         }
         if (state.progressBarState is ProgressBarState.Loading) {

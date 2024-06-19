@@ -62,6 +62,7 @@ dependencies {
     implementation(project(":hero:hero-interactors"))
     implementation(project(":hero:hero-domain"))
     implementation(project(":hero:heroList"))
+    implementation(project(":hero:heroDetail"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -71,7 +72,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
 
-    implementation(libs.androidx.material)
     implementation(libs.androidx.material3.android)
     implementation("app.cash.sqldelight:android-driver:2.0.2")
 
@@ -79,6 +79,9 @@ dependencies {
     implementation ("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // compose navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
