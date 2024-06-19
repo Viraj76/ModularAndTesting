@@ -24,6 +24,7 @@ import com.appsv.herolist.components.HeroListToolbar
 @Composable
 fun HeroListScreen(
     state : HeroListState,
+    event : (HeroListEvents) -> Unit,
     navigateToHeroDetailScreen : (Int) ->  Unit
 ){
 
@@ -37,13 +38,14 @@ fun HeroListScreen(
             val name = remember {
                 mutableStateOf("")
             }
+
             HeroListToolbar(
-                heroName = name.value,
+                heroName = state.heroName,
                 onHeroNameChanged = {heroName->
-                                    name.value = heroName
+                     event(HeroListEvents.UpdateHeroName(heroName))
                 },
                 onExecuteSearch = {
-
+                    event(HeroListEvents.FilterHeros)
                 },
                 onShowFilterDialog = {
 
@@ -51,9 +53,8 @@ fun HeroListScreen(
             )
 
             LazyColumn(
-
             ) {
-                items(state.heros) { hero ->
+                items(state.filteredHeros) { hero ->
                     HeroListItem(hero = hero, onSelectHero = {heroId ->
                         navigateToHeroDetailScreen(heroId)
                     })

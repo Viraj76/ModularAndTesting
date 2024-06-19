@@ -25,7 +25,10 @@ fun  SetNavGraph() {
 
         composable(route = Screen.HeroList.route){
             val viewModel : HeroListViewModel = hiltViewModel()
-            HeroListScreen(state = viewModel.state.value){heroId->
+            HeroListScreen(
+                state = viewModel.state.value,
+                event = viewModel::onEvent
+            ){heroId->
                 navController.navigate("${Screen.HeroDetail.route}/$heroId")
             }
         }
