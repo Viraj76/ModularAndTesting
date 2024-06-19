@@ -5,7 +5,7 @@ import com.appsv.hero_domain.Hero
 
 
 data class HeroListState(
-    val progressBarState: ProgressBarState = ProgressBarState.Idle,
+    var progressBarState: ProgressBarState = ProgressBarState.Idle,
     val heros: List<Hero> = listOf(),
 //    val filteredHeros: List<Hero> = listOf(),
 //    val filterDialogState: UIComponentState = UIComponentState.Hide, // show/hide the filter dialog
