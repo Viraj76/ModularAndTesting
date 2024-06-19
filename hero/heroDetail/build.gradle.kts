@@ -42,7 +42,9 @@ android {
 
 dependencies {
 
-
+    implementation(project(":hero:hero-interactors"))
+    implementation(project(":hero:hero-domain"))
+    implementation(project(":core"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
@@ -66,6 +68,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
 
 }

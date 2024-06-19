@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.appsv.herodetail.HeroDetail
+import com.appsv.herodetail.HeroDetailViewModel
 import com.appsv.herolist.ui.HeroListScreen
 import com.appsv.herolist.viewmodle.HeroListViewModel
 
@@ -33,7 +34,8 @@ fun  SetNavGraph() {
             arguments = Screen.HeroDetail.arguments
 
         ){
-            HeroDetail(heroId = it.arguments?.getInt("heroId")!!)
+            val heroDetailViewModel : HeroDetailViewModel= hiltViewModel()
+            HeroDetail(heroDetailViewModel.state.value)
         }
     }
 }
